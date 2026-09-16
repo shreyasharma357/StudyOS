@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your subjects and topics with StudyOS">
+    <title>Subjects | StudyOS</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Common CSS -->
+    <link
+        rel="stylesheet"
+        href="common.css">
+    <!-- Subjects CSS -->
+    <link rel="stylesheet" href="subjects.css">
+</head>
+<body>
+    <!--HEADER-->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>StudyOS</span>
+            </a>
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a href="index.html" class="nav-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="subjects.html" class="nav-link active">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+                <a href="task.html" class="nav-link">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Tasks</span>
+                </a>
+                <a href="focus.html" class="nav-link">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Focus</span>
+                </a>
+                <a href="analytics.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="achievements.html" class="nav-link">
+                    <i class="fa-solid fa-trophy"></i>
+                <span>Achievements</span>
+                </a>
+                <a href="ai-assistant.html" class="nav-link">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+            </nav>
+            <!-- Profile -->
+            <a href="profile.html" class="profile-link">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+    <!--MAIN CONTENT-->
+    <main class="subjects-page">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="page-heading">
+                    <p class="page-label">
+                        <i class="fa-solid fa-book-open"></i>
+                        Academic
+                    </p>
+                    <h1>
+                        My Subjects
+                    </h1>
+                    <p class="page-description">
+                        Organize your subjects, topics and learning progress.
+                    </p>
+                </div>
+                <!-- Add Subject Button -->
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="add-subject-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>
+                        Add Subject
+                    </span>
+                </button>
+            </section>
+            <!--SUBJECTS CONTAINER-->
+            <section class="subjects-section">
+                <div
+                    class="subjects-grid"
+                    id="subjects-grid">
+                    <!-- Subjects will be generated here using JavaScript.-->
+                    <!-- Empty State -->
+                    <div
+                        class="empty-state"
+                        id="subjects-empty-state">
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <h2>
+                            No subjects yet
+                        </h2>
+                        <p>
+                            Add your first subject to start
+                        organizing your studies.
+                        </p>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="empty-add-subject-btn">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Your First Subject
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>
+                    © 2026 StudyOS. Built for students.
+                </p>
+                <div class="footer-links">
+                    <a href="index.html">
+                        Dashboard
+                    </a>
+                    <a href="profile.html">
+                        Profile
+                    </a>
+                    <a href="ai-assistant.html">
+                        AI Assistant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--JAVASCRIPT-->
+    <script src="common.js"></script>
+    <script src="subjects.js"></script>
+
+</body>
+
+</html>

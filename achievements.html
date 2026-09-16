@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements — StudyOS</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="achievements.css">
+</head>
+
+<body>
+ <header class="header"> <!--Header-->
+        <div class="header-container">
+            <!-- Logo -->
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>
+                    StudyOS
+                </span>
+            </a>
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a
+                    href="index.html"
+                    class="nav-link"
+                    data-tooltip="Dashboard"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-tooltip="Subjects"
+                >
+                    <i class="fa-solid fa-book"></i>
+                    <span>
+                        Subjects
+                    </span>
+                </a>
+                <a
+                    href="task.html"
+                    class="nav-link"
+                    data-tooltip="Tasks"
+                >
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>
+                        Tasks
+                    </span>
+                </a>
+                <a
+                    href="focus.html"
+                    class="nav-link"
+                    data-tooltip="Focus"
+                >
+                    <i class="fa-solid fa-clock"></i>
+                    <span>
+                        Focus
+                    </span>
+                </a>
+                <a
+                    href="analytics.html"
+                    class="nav-link"
+                    data-tooltip="Analytics"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>
+                        Analytics
+                    </span>
+                </a>
+                <a
+                    href="achievements.html"
+                    class="nav-link active "
+                    data-tooltip="Achievements"
+                >
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>
+                        Achievements
+                    </span>
+                </a>
+                <a
+                    href="ai-assistant.html"
+                    class="nav-link"
+                    data-tooltip="AI Assistant"
+                >
+                    <i class="fa-solid fa-robot"></i>
+                    <span>
+                        AI Assistant
+                    </span>
+                </a>
+            </nav>
+            <!-- Profile -->
+            <a
+                href="profile.html"
+                class="profile-link"
+                title="Profile"
+            >
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="achievements-page">
+        <div class="container">
+
+            <section class="page-header">
+                <div>
+                    <p class="page-label">
+                        <i class="fa-solid fa-trophy"></i>
+                        Milestones
+                    </p>
+
+                    <h1>Achievements</h1>
+
+                    <p>
+                        Celebrate your progress and keep building better study habits.
+                    </p>
+                </div>
+            </section>
+
+            <section class="achievement-summary">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                    <div>
+                        <span>Unlocked</span>
+                        <strong id="unlocked-count">0</strong>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+
+                    <div>
+                        <span>Total milesones</span>
+                        <strong id="remaining-count">0</strong>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+
+                    <div>
+                        <span>Completion</span>
+                        <strong id="achievement-progress">0%</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="achievement-section">
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">Your Progress</span>
+                        <h2>Achievements</h2>
+                    </div>
+
+                    <span class="achievement-total" id="achievement-total">
+                        0 achievements
+                    </span>
+                </div>
+
+                <div class="achievements-grid" id="achievements-grid"></div>
+
+                <div class="empty-state" id="achievements-empty-state">
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                    <h3>No achievements yet</h3>
+
+                    <p>
+                        Complete tasks and focus sessions to unlock your first achievement.
+                    </p>
+                </div>
+            </section>
+
+            <section class="achievement-section recent-section">
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">Milestones</span>
+                        <h2>Recent Achievements</h2>
+                    </div>
+                </div>
+
+                <div class="recent-achievements" id="recent-achievements">
+                    <div class="recent-empty">
+                        <i class="fa-solid fa-medal"></i>
+                        <p>Your recently unlocked achievements will appear here.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 StudyOS. Built for better studying.</p>
+
+            <div class="footer-links">
+                <a href="index.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="ai-assistant.html">AI Assistant</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="achievements.js"></script>
+</body>
+</html>

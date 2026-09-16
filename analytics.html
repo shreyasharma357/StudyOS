@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics — StudyOS</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="analytics.css">
+</head>
+
+<body>
+    <header class="header"> <!--Header-->
+        <div class="header-container">
+            <!-- Logo -->
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>
+                    StudyOS
+                </span>
+            </a>
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a
+                    href="index.html"
+                    class="nav-link"
+                    data-tooltip="Dashboard"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-tooltip="Subjects"
+                >
+                    <i class="fa-solid fa-book"></i>
+                    <span>
+                        Subjects
+                    </span>
+                </a>
+                <a
+                    href="task.html"
+                    class="nav-link"
+                    data-tooltip="Tasks"
+                >
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>
+                        Tasks
+                    </span>
+                </a>
+                <a
+                    href="focus.html"
+                    class="nav-link"
+                    data-tooltip="Focus"
+                >
+                    <i class="fa-solid fa-clock"></i>
+                    <span>
+                        Focus
+                    </span>
+                </a>
+                <a
+                    href="analytics.html"
+                    class="nav-link active"
+                    data-tooltip="Analytics"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>
+                        Analytics
+                    </span>
+                </a>
+                <a
+                    href="achievements.html"
+                    class="nav-link"
+                    data-tooltip="Achievements"
+                >
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>
+                        Achievements
+                    </span>
+                </a>
+                <a
+                    href="ai-assistant.html"
+                    class="nav-link"
+                    data-tooltip="AI Assistant"
+                >
+                    <i class="fa-solid fa-robot"></i>
+                    <span>
+                        AI Assistant
+                    </span>
+                </a>
+            </nav>
+            <!-- Profile -->
+            <a
+                href="profile.html"
+                class="profile-link"
+                title="Profile"
+            >
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="analytics-page">
+        <div class="container">
+
+            <section class="page-header">
+                <div>
+                    <p class="page-label">
+                        <i class="fa-solid fa-chart-line"></i>
+                        Insights
+                    </p>
+
+                    <h1>Analytics</h1>
+
+                    <p>
+                        Track your study habits, task progress, and productivity.
+                    </p>
+                </div>
+            </section>
+
+            <section class="analytics-overview">
+
+                <div class="analytics-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div class="card-content">
+                        <span>Total Study Time</span>
+                        <strong id="total-study-time">0h 0m</strong>
+                        <small>This week</small>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                    <div class="card-content">
+                        <span>Study Streak</span>
+                        <strong id="analytics-streak">0 days</strong>
+                        <small>Keep going</small>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+
+                    <div class="card-content">
+                        <span>Tasks Completed</span>
+                        <strong id="analytics-tasks-completed">0</strong>
+                        <small>This week</small>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+
+                    <div class="card-content">
+                        <span>Goal Completion</span>
+                        <strong id="goal-completion">0%</strong>
+                        <small>Task completion rate</small>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="analytics-grid">
+
+                <div class="analytics-panel study-chart-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">Study Activity</span>
+                            <h2>Study Time</h2>
+                        </div>
+
+                        <select id="study-period">
+                            <option value="7">Last 7 Days</option>
+                            <option value="14">Last 14 Days</option>
+                            <option value="30">Last 30 Days</option>
+                        </select>
+                    </div>
+
+                    <div class="study-chart" id="study-chart">
+                        <div class="chart-empty" id="chart-empty">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <p>No study data yet</p>
+                            <span>Complete focus sessions to see your activity.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">Tasks</span>
+                            <h2>Task Progress</h2>
+                        </div>
+                    </div>
+
+                    <div class="task-progress">
+
+                        <div class="progress-row">
+                            <div class="progress-info">
+                                <span>Completed</span>
+                                <b id="completed-task-count">0</b>
+                            </div>
+
+                            <div class="analytics-progress-bar">
+                                <div
+                                    class="analytics-progress-fill completed"
+                                    id="completed-task-progress"
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-row">
+                            <div class="progress-info">
+                                <span>Pending</span>
+                                <b id="pending-task-count">0</b>
+                            </div>
+                            <div class="analytics-progress-bar">
+                                <div
+                                    class="analytics-progress-fill pending"
+                                    id="pending-task-progress"
+                                ></div>
+                            </div>
+                        </div>
+                        <div class="progress-row">
+                            <div class="progress-info">
+                                <span>Overdue</span>
+                                <b id="overdue-task-count">0</b>
+                            </div>
+                            <div class="analytics-progress-bar">
+                                <div
+                                    class="analytics-progress-fill overdue"
+                                    id="overdue-task-progress"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-grid secondary-grid">
+                <div class="analytics-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">Subjects</span>
+                            <h2>Subject Performance</h2>
+                        </div>
+                    </div>
+                    <div
+                        class="subject-performance"
+                        id="subject-performance"
+                    >
+                        <div class="chart-empty" id="subject-empty">
+                            <i class="fa-solid fa-book-open"></i>
+                            <p>No subject data yet</p>
+                            <span>Add subjects and study sessions to see performance.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="analytics-panel">
+                    <div class="panel-header">
+                        <div>
+                            <span class="panel-label">Productivity</span>
+                            <h2>Weekly Summary</h2>
+                        </div>
+                    </div>
+                    <div class="weekly-summary">
+                        <div class="summary-item">
+                            <span>
+                                <i class="fa-solid fa-clock"></i>
+                                Average study time
+                            </span>
+                            <strong id="average-study-time">0m/day</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>
+                                <i class="fa-solid fa-check"></i>
+                                Completion rate
+                            </span>
+                            <strong id="weekly-completion-rate">0%</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>
+                                <i class="fa-solid fa-calendar-check"></i>
+                                Active study days
+                            </span>
+                            <strong id="active-study-days">0 days</strong>
+                        </div>
+                        <div class="summary-item">
+                            <span>
+                                <i class="fa-solid fa-stopwatch"></i>
+                                Focus sessions
+                            </span>
+                            <strong id="weekly-focus-sessions">0</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="analytics-panel insights-panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="panel-label">Overview</span>
+                        <h2>Productivity Insights</h2>
+                    </div>
+                </div>
+                <div class="insights-list" id="insights-list">
+                    <div class="insight-item">
+                        <div class="insight-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <strong>Start studying to unlock insights</strong>
+                            <p>
+                                Your productivity patterns will appear here
+                                as you complete tasks and focus sessions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 StudyOS. Built for better studying.</p>
+            <div class="footer-links">
+                <a href="index.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="ai-assistant.html">AI Assistant</a>
+            </div>
+        </div>
+    </footer>
+    <script src="common.js"></script>
+    <script src="analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus | StudyOS</title>
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="common.css">
+    <!-- Focus CSS -->
+    <link rel="stylesheet" href="focus.css">
+</head>
+<body>
+    <header class="header"> <!--Header-->
+        <div class="header-container">
+            <!-- Logo -->
+            <a
+                href="index.html"
+                class="logo"
+            >
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>
+                    StudyOS
+                </span>
+            </a>
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a
+                    href="index.html"
+                    class="nav-link"
+                    data-tooltip="Dashboard"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-tooltip="Subjects"
+                >
+                    <i class="fa-solid fa-book"></i>
+                    <span>
+                        Subjects
+                    </span>
+                </a>
+                <a
+                    href="task.html"
+                    class="nav-link"
+                    data-tooltip="Tasks"
+                >
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>
+                        Tasks
+                    </span>
+                </a>
+                <a
+                    href="focus.html"
+                    class="nav-link active"
+                    data-tooltip="Focus"
+                >
+                    <i class="fa-solid fa-clock"></i>
+                    <span>
+                        Focus
+                    </span>
+                </a>
+                <a
+                    href="analytics.html"
+                    class="nav-link"
+                    data-tooltip="Analytics"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>
+                        Analytics
+                    </span>
+                </a>
+                <a
+                    href="achievements.html"
+                    class="nav-link"
+                    data-tooltip="Achievements"
+                >
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>
+                        Achievements
+                    </span>
+                </a>
+                <a
+                    href="ai-assistant.html"
+                    class="nav-link"
+                    data-tooltip="AI Assistant"
+                >
+                    <i class="fa-solid fa-robot"></i>
+                    <span>
+                        AI Assistant
+                    </span>
+                </a>
+            </nav>
+            <!-- Profile -->
+            <a
+                href="profile.html"
+                class="profile-link"
+                title="Profile"
+            >
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+    <main class="focus-page"> <!--Main content-->
+        <div class="container">
+            <!-- PAGE HEADER -->
+            <section class="page-header">
+                <div class="page-heading">
+                    <p class="page-label">
+                        <i class="fa-solid fa-bolt"></i>
+                        Deep Work
+                    </p>
+                    <h1>
+                        Focus Mode
+                    </h1>
+                    <p class="page-description">
+                        Stay focused, eliminate distractions,
+                        and make every study session count.
+                    </p>
+                </div>
+            </section>
+            <section class="focus-grid"> <!--Focus-->
+                <div class="focus-card timer-card"> <!--Timer Card-->
+                    <div class="timer-header">
+                        <div>
+                            <span class="timer-label">
+                                Current Session
+                            </span>
+                            <h2 id="timer-mode">
+                                Focus
+                            </h2>
+                        </div>
+                        <div class="session-indicator">
+                            <i class="fa-solid fa-circle"></i>
+                            <span id="session-status">
+                                Ready
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Timer -->
+                    <div class="timer-container">
+                        <div class="timer-ring">
+                            <div class="timer-inner">
+                                <span id="timer-display">
+                                    25:00
+                                </span>
+                                <small>
+                                    minutes
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timer Controls -->
+                    <div class="timer-controls">
+                        <button
+                            type="button"
+                            class="timer-btn secondary"
+                            id="reset-timer"
+                            title="Reset timer"
+                        >
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                        <button
+                            type="button"
+                            class="timer-btn primary"
+                            id="start-timer"
+                        >
+                            <i class="fa-solid fa-play"></i>
+                            <span>
+                                Start
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="timer-btn secondary"
+                            id="skip-timer"
+                            title="Skip session"
+                        >
+                            <i class="fa-solid fa-forward"></i>
+                        </button>
+                    </div>
+                    <!-- Session Counter -->
+                    <div class="session-counter">
+                        <span>
+                            Sessions completed
+                        </span>
+                        <b id="completed-sessions">
+                            0
+                        </b>
+                    </div>
+                </div>
+                <div class="focus-card settings-card"> <!--session setting-->
+                    <div class="card-header">
+                        <div>
+                            <span class="card-label">
+                                Customize
+                            </span>
+                            <h2>
+                                Focus Settings
+                            </h2>
+                        </div>
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <!-- Focus Duration -->
+                    <div class="setting-group">
+                        <label for="focus-duration">
+                            <span>
+                                Focus Duration
+                            </span>
+                            <b>
+                                <span id="focus-duration-value">
+                                    25
+                                </span>
+                                min
+                            </b>
+                        </label>
+                        <input
+                            type="range"
+                            id="focus-duration"
+                            min="5"
+                            max="60"
+                            step="5"
+                            value="25"
+                        >
+                    </div>
+                    <!-- Short Break -->
+                    <div class="setting-group">
+                        <label for="short-break">
+                            <span>
+                                Short Break
+                            </span>
+                            <b>
+                                <span id="short-break-value">
+                                    5
+                                </span>
+                                min
+                            </b>
+                        </label>
+                        <input
+                            type="range"
+                            id="short-break"
+                            min="1"
+                            max="15"
+                            step="1"
+                            value="5"
+                        >
+                    </div>
+                    <!-- Long Break -->
+                    <div class="setting-group">
+                        <label for="long-break">
+                            <span>
+                                Long Break
+                            </span>
+                            <b>
+                                <span id="long-break-value">
+                                    15
+                                </span>
+                                min
+                            </b>
+                        </label>
+                        <input
+                            type="range"
+                            id="long-break"
+                            min="5"
+                            max="30"
+                            step="5"
+                            value="15"
+                        >
+                    </div>
+                    <!-- Session Subject -->
+                    <div class="setting-group">
+                        <label for="focus-subject">
+                            Study Subject
+                        </label>
+                        <select id="focus-subject">
+                            <option value="">
+                                Select a subject
+                            </option>
+                        </select>
+                    </div>
+                    <!-- Save -->
+                    <button
+                        type="button"
+                        class="btn btn-primary settings-save"
+                        id="save-focus-settings"
+                    >
+                        <i class="fa-solid fa-check"></i>
+                        Save Settings
+                    </button>
+                </div>
+            </section>
+            <section class="focus-card progress-card"> <!--Today's Progress-->
+                <div class="card-header">
+                    <div>
+                        <span class="card-label">
+                            Today
+                        </span>
+                        <h2>
+                            Focus Progress
+                        </h2>
+                    </div>
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <div class="progress-content">
+                    <div class="progress-stat">
+                        <span>
+                            Focus Sessions
+                        </span>
+                        <b id="today-sessions">
+                            0
+                        </b>
+                    </div>
+                    <div class="progress-stat">
+                        <span>
+                            Focus Time
+                        </span>
+                        <b id="today-focus-time">
+                            0 min
+                        </b>
+                    </div>
+                    <div class="progress-stat">
+                        <span>
+                            Daily Goal
+                        </span>
+                        <b>
+                            <span id="daily-goal-hours">
+                                2
+                            </span>
+                            hrs
+                        </b>
+
+                    </div>
+
+
+                    <div class="progress-stat">
+
+                        <span>
+                            Goal Progress
+                        </span>
+
+                        <b id="focus-goal-progress">
+                            0%
+                        </b>
+                    </div>
+                </div>
+                <div class="goal-progress">
+                    <div class="goal-progress-bar">
+                        <span
+                            id="focus-progress-fill"
+                            style="width: 0%"
+                        ></span>
+                    </div>
+                </div>
+            </section>
+            <section class="focus-tips"> <!--Focus Tips-->
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Remove Distractions
+                        </h3>
+                        <p>
+                            Put your phone away and close
+                            unnecessary browser tabs.
+                        </p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Set One Goal
+                        </h3>
+                        <p>
+                            Decide exactly what you want
+                            to accomplish before starting.
+                        </p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Take Breaks
+                        </h3>
+                        <p>
+                            Use your breaks to rest and
+                            return with renewed focus.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer"> <!--Footer-->
+        <div class="container">
+            <div class="footer-content">
+                <p>
+                    &copy; 2026 StudyOS. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="index.html">
+                        Dashboard
+                    </a>
+                    <a href="subjects.html">
+                        Subjects
+                    </a>
+                    <a href="task.html">
+                        Tasks
+                    </a>
+                    <a href="profile.html">
+                        Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="common.js"></script> <!--Javascript-->
+    <script src="focus.js"></script>
+
+
+</body>
+
+</html>

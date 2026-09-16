@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="Manage your tasks and to-do lists with StudyOS">
+    <title>Tasks | StudyOS</title>
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="common.css">
+    <!-- Task CSS -->
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    <header class="header"> <!--HEADER-->
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>StudyOS</span>
+            </a>
+            <!-- Navigation -->
+            <nav class="navbar">
+                <a
+                    href="index.html"
+                    class="nav-link"
+                    data-tooltip="Dashboard">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-tooltip="Subjects">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+                <a
+                    href="task.html"
+                    class="nav-link active"
+                    data-tooltip="Tasks">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Tasks</span>
+                </a>
+                <a
+                    href="focus.html"
+                    class="nav-link"
+                    data-tooltip="Focus">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Focus</span>
+                </a>
+                <a
+                    href="analytics.html"
+                    class="nav-link"
+                    data-tooltip="Analytics">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+                <a
+                    href="achievements.html"
+                    class="nav-link"
+                    data-tooltip="Achievements">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Achievements</span>
+                </a>
+                <a
+                    href="ai-assistant.html"
+                    class="nav-link"
+                    data-tooltip="AI Assistant">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+            </nav>
+            <!-- Profile -->
+            <a href="profile.html" class="profile-link" title="Profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+        </div>
+    </header>
+    <main class="tasks-page"> <!-- Main Content -->
+        <div class="container">
+            <!-- PAGE HEADER -->
+            <section class="page-header">
+                <div class="page-heading">
+                    <p class="page-label">
+                        <i class="fa-solid fa-list-check"></i>
+                        Productivity
+                    </p>
+                    <h1>
+                        My Tasks
+                    </h1>
+                    <p class="page-description">
+                        Manage your tasks and to-do lists effectively
+                        and complete your assignments.
+                    </p>
+                </div>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="add-task-btn"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    <span>
+                        Add Task
+                    </span>
+                </button>
+            </section>
+            <section class="task-summary"> <!-- Task Summary -->
+                <!-- Total -->
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>
+                            Total Tasks
+                        </span>
+                        <b id="total-tasks">
+                            0
+                        </b>
+                    </div>
+                </div>
+                <!-- Pending -->
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>
+                            Pending Tasks
+                        </span>
+                        <b id="pending-tasks">
+                            0
+                        </b>
+                    </div>
+                </div>
+                <!-- Completed -->
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>
+                            Completed Tasks
+                        </span>
+                        <b id="completed-tasks">
+                            0
+                        </b>
+                    </div>
+                </div>
+                <!-- Due Today -->
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div class="summary-content">
+                        <span>
+                            Due Today
+                        </span>
+                        <b id="due-today">
+                            0
+                        </b>
+                    </div>
+                </div>
+            </section>
+            <section class="task-controls"> <!--Task Controls-->
+                <!-- Filters -->
+                <div class="task-filters">
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-filter="all">
+                        All
+                    </button>
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="pending">
+                        Pending
+                    </button>
+                    <button
+                        type="button"
+                        class="filter-btn"
+                        data-filter="completed">
+                        Completed
+                    </button>
+                </div>
+                <!-- Sort -->
+                <div class="task-sort">
+                    <label for="task-sort">
+                        Sort by:
+                    </label>
+                    <select id="task-sort">
+                        <option value="date">
+                            Due Date
+                        </option>
+                        <option value="priority">
+                            Priority
+                        </option>
+                        <option value="created">
+                            Recently Added
+                        </option>
+                    </select>
+                </div>
+            </section>
+            <section class="task-section"> <!-- Task List -->
+                <!-- Dynamic task cards -->
+                <div class="task-list" id="task-list"></div>
+                <!-- Empty State -->
+                <div
+                    class="empty-state"
+                    id="tasks-empty-state"
+                >
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h2>
+                        No tasks available.
+                    </h2>
+                    <p>
+                        Add your first task to start organizing
+                        your workload.
+                    </p>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="empty-add-task-btn"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Add Your First Task
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer"> <!-- Footer content -->
+        <div class="container">
+            <div class="footer-content">
+                <p>
+                    &copy; 2026 StudyOS. All rights reserved.
+                </p>
+                <div class="footer-links">
+                    <a href="index.html">
+                        Dashboard
+                    </a>
+                    <a href="subjects.html">
+                        Subjects
+                    </a>
+                    <a href="profile.html">
+                        Profile
+                    </a>
+                    <a href="ai-assistant.html">
+                        AI Assistant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="common.js"></script> <!--javascript-->
+    <script src="task.js"></script>
+</body>
+
+</html>

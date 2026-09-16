@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile — StudyOS</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>StudyOS</span>
+            </a>
+
+            <nav class="navbar">
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                    data-tooltip="Dashboard"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-tooltip="Subjects"
+                >
+                    <i class="fa-solid fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a
+                    href="task.html"
+                    class="nav-link"
+                    data-tooltip="Tasks"
+                >
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Tasks</span>
+                </a>
+
+                <a
+                    href="focus.html"
+                    class="nav-link"
+                    data-tooltip="Focus"
+                >
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Focus</span>
+                </a>
+
+                <a
+                    href="analytics.html"
+                    class="nav-link"
+                    data-tooltip="Analytics"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+
+                <a
+                    href="achievements.html"
+                    class="nav-link"
+                    data-tooltip="Achievements"
+                >
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Achievements</span>
+                </a>
+
+                <a
+                    href="ai-assistant.html"
+                    class="nav-link"
+                    data-tooltip="AI Assistant"
+                >
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+
+            </nav>
+
+            <a
+                href="profile.html"
+                class="profile-link active"
+                data-tooltip="Profile"
+            >
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
+    </header>
+
+    <main class="profile-page">
+
+        <div class="profile-container">
+
+            <section class="page-header">
+
+                <div>
+                    <span class="eyebrow">Account</span>
+                    <h1>My Profile</h1>
+                    <p>
+                        Manage your student information and StudyOS preferences.
+                    </p>
+                </div>
+
+            </section>
+
+            <div class="profile-grid">
+
+                <section class="profile-card profile-overview">
+
+                    <div class="profile-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <h2 id="profile-display-name">
+                        Student
+                    </h2>
+
+                    <p id="profile-display-course">
+                        Student
+                    </p>
+
+                    <div class="profile-details">
+
+                        <div class="profile-detail">
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+                                <span>Email</span>
+                                <strong id="profile-display-email">
+                                    Not added
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="profile-detail">
+                            <i class="fa-solid fa-building-columns"></i>
+
+                            <div>
+                                <span>College</span>
+                                <strong id="profile-display-college">
+                                    Not added
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="profile-detail">
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            <div>
+                                <span>Semester</span>
+                                <strong id="profile-display-semester">
+                                    Not added
+                                </strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="profile-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h2>Student Information</h2>
+                            <p>Update your basic profile details.</p>
+                        </div>
+
+                        <i class="fa-solid fa-user-pen"></i>
+                    </div>
+
+                    <form id="profile-form">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="profile-name">
+                                    Full Name
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-user"></i>
+
+                                    <input
+                                        type="text"
+                                        id="profile-name"
+                                        placeholder="Enter your name"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-email">
+                                    Email
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-envelope"></i>
+
+                                    <input
+                                        type="email"
+                                        id="profile-email"
+                                        placeholder="Enter your email"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-college">
+                                    College
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-building-columns"></i>
+
+                                    <input
+                                        type="text"
+                                        id="profile-college"
+                                        placeholder="Enter your college"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-course">
+                                    Course
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-book-open"></i>
+
+                                    <input
+                                        type="text"
+                                        id="profile-course"
+                                        placeholder="Enter your course"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="profile-semester">
+                                    Semester
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <i class="fa-solid fa-layer-group"></i>
+
+                                    <select id="profile-semester">
+                                        <option value="">
+                                            Select semester
+                                        </option>
+                                        <option value="1st Semester">
+                                            1st Semester
+                                        </option>
+                                        <option value="2nd Semester">
+                                            2nd Semester
+                                        </option>
+                                        <option value="3rd Semester">
+                                            3rd Semester
+                                        </option>
+                                        <option value="4th Semester">
+                                            4th Semester
+                                        </option>
+                                        <option value="5th Semester">
+                                            5th Semester
+                                        </option>
+                                        <option value="6th Semester">
+                                            6th Semester
+                                        </option>
+                                        <option value="7th Semester">
+                                            7th Semester
+                                        </option>
+                                        <option value="8th Semester">
+                                            8th Semester
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                                id="save-profile"
+                            >
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Save Profile
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+            <section class="profile-card settings-card">
+
+                <div class="card-header">
+                    <div>
+                        <h2>Study Preferences</h2>
+                        <p>Customize your daily StudyOS experience.</p>
+                    </div>
+
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <strong>Daily Study Goal</strong>
+                            <span>
+                                Set your target study hours per day.
+                            </span>
+                        </div>
+
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="daily-goal"
+                                min="1"
+                                max="24"
+                                step="0.5"
+                            >
+
+                            <span>hours</span>
+                        </div>
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <strong>Pomodoro Duration</strong>
+                            <span>
+                                Choose the length of a focus session.
+                            </span>
+                        </div>
+
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="pomodoro-duration"
+                                min="1"
+                                max="120"
+                            >
+
+                            <span>min</span>
+                        </div>
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <strong>Short Break</strong>
+                            <span>
+                                Set the duration of a short break.
+                            </span>
+                        </div>
+
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="short-break"
+                                min="1"
+                                max="60"
+                            >
+
+                            <span>min</span>
+                        </div>
+
+                    </div>
+
+                    <div class="setting-item">
+
+                        <div class="setting-info">
+                            <strong>Long Break</strong>
+                            <span>
+                                Set the duration of a long break.
+                            </span>
+                        </div>
+
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="long-break"
+                                min="1"
+                                max="120"
+                            >
+
+                            <span>min</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="settings-actions">
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="save-settings"
+                    >
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Save Preferences
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>StudyOS</span>
+                </a>
+
+                <p>
+                    Your personal student productivity workspace.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="subjects.html">Subjects</a>
+                <a href="task.html">Tasks</a>
+                <a href="focus.html">Focus</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="ai-assistant.html">AI Assistant</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 StudyOS. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="profile.js"></script>
+
+</body>
+</html>

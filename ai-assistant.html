@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Assistant — StudyOS</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="ai-assistant.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>StudyOS</span>
+            </a>
+
+            <nav class="navbar">
+                <a
+                    href="index.html"
+                    class="nav-link"
+                    data-tooltip="Dashboard"
+                >
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a
+                    href="subjects.html"
+                    class="nav-link"
+                    data-tooltip="Subjects"
+                >
+                    <i class="fa-solid fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a
+                    href="task.html"
+                    class="nav-link"
+                    data-tooltip="Tasks"
+                >
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Tasks</span>
+                </a>
+
+                <a
+                    href="focus.html"
+                    class="nav-link"
+                    data-tooltip="Focus"
+                >
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Focus</span>
+                </a>
+
+                <a
+                    href="analytics.html"
+                    class="nav-link"
+                    data-tooltip="Analytics"
+                >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+
+                <a
+                    href="achievements.html"
+                    class="nav-link"
+                    data-tooltip="Achievements"
+                >
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Achievements</span>
+                </a>
+
+                <a
+                    href="ai-assistant.html"
+                    class="nav-link active"
+                    data-tooltip="AI Assistant"
+                >
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+            </nav>
+
+            <a
+                href="profile.html"
+                class="profile-link"
+                data-tooltip="Profile"
+            >
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
+    </header>
+
+    <main class="ai-page">
+
+        <div class="ai-container">
+
+            <section class="ai-header">
+
+                <div class="ai-header-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div>
+                    <span class="eyebrow">StudyOS Assistant</span>
+                    <h1>AI Assistant</h1>
+                    <p>
+                        Ask questions, understand concepts, and get help
+                        with your studies.
+                    </p>
+                </div>
+
+            </section>
+
+            <section class="chat-card">
+
+                <div class="chat-header">
+
+                    <div class="assistant-info">
+
+                        <div class="assistant-avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <div>
+                            <h2>StudyOS AI</h2>
+
+                            <span class="assistant-status">
+                                <span class="status-dot"></span>
+                                Ready to help
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="clear-chat"
+                        id="clear-chat"
+                        title="Clear conversation"
+                    >
+                        <i class="fa-solid fa-trash"></i>
+                        <span>Clear</span>
+                    </button>
+
+                </div>
+
+                <div
+                    class="chat-messages"
+                    id="chat-messages"
+                    aria-live="polite"
+                >
+
+                    <div class="message assistant-message">
+
+                        <div class="message-avatar">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+
+                        <div class="message-content">
+                            <span class="message-name">StudyOS AI</span>
+
+                            <div class="message-bubble">
+                                Hello! I'm your StudyOS Assistant.
+                                Ask me anything about your studies,
+                                programming, subjects, or concepts 
+                                you want to concentrate.
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="suggestions">
+
+                    <span class="suggestions-title">
+                        Try asking
+                    </span>
+
+                    <div class="suggestion-list">
+
+                        <button
+                            type="button"
+                            class="suggestion-btn"
+                            data-question="Explain data structures"
+                        >
+                            <i class="fa-solid fa-code"></i>
+                            Explain data structures
+                        </button>
+
+                        <button
+                            type="button"
+                            class="suggestion-btn"
+                            data-question="Create a study plan"
+                        >
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Create a study plan
+                        </button>
+
+                        <button
+                            type="button"
+                            class="suggestion-btn"
+                            data-question="Explain a concept"
+                        >
+                            <i class="fa-solid fa-lightbulb"></i>
+                            Explain a concept
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <form
+                    class="chat-form"
+                    id="chat-form"
+                >
+
+                    <div class="input-wrapper">
+
+                        <textarea
+                            id="chat-input"
+                            name="message"
+                            rows="1"
+                            placeholder="Ask StudyOS AI something..."
+                            aria-label="Ask StudyOS AI"
+                            autocomplete="off"
+                        ></textarea>
+
+                        <button
+                            type="submit"
+                            id="send-message"
+                            class="send-button"
+                            title="Send message"
+                        >
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+
+                    </div>
+
+                    <p class="input-note">
+                        StudyOS AI currently runs locally in your browser.
+                    </p>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>StudyOS</span>
+                </a>
+
+                <p>
+                    Your personal student productivity workspace.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="subjects.html">Subjects</a>
+                <a href="task.html">Tasks</a>
+                <a href="focus.html">Focus</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="achievements.html">Achievements</a>
+                <a href="ai-assistant.html">AI Assistant</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 StudyOS. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="ai-assistant.js"></script>
+
+</body>
+</html>

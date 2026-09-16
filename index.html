@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudyOS - A student academic management and productivity platform">
+    <title>StudyOS | Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-container">
+
+            <button class="logo logo-menu-trigger" id="logo-menu-trigger" type="button">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>StudyOS</span>
+            </button>
+
+            <nav class="navbar">
+                <a href="index.html" class="nav-link active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="subjects.html" class="nav-link">
+                    <i class="fa-solid fa-book"></i>
+                    <span>Subjects</span>
+                </a>
+
+                <a href="task.html" class="nav-link">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Tasks</span>
+                </a>
+
+                <a href="focus.html" class="nav-link">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Focus</span>
+                </a>
+
+                <a href="analytics.html" class="nav-link">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+
+                <a href="achievements.html" class="nav-link">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span>Achievements</span>
+                </a>
+
+                <a href="ai-assistant.html" class="nav-link">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>AI Assistant</span>
+                </a>
+            </nav>
+
+            <a href="profile.html" class="profile-link" aria-label="Open profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
+    </header>
+
+    <div class="logo-menu-overlay" id="logo-menu-overlay"></div>
+
+    <aside class="logo-menu" id="logo-menu">
+        <div class="logo-menu-header">
+            <div>
+                <span class="logo-menu-eyebrow">StudyOS</span>
+                <h2>Navigate</h2>
+            </div>
+
+            <button
+                class="logo-menu-close"
+                id="logo-menu-close"
+                type="button"
+                aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <nav class="logo-menu-links">
+            <a href="index.html" class="logo-menu-link active">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-house"></i>
+                </span>
+                <span>
+                    <strong>Dashboard</strong>
+                    <small>Your study overview</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="subjects.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-book"></i>
+                </span>
+                <span>
+                    <strong>Subjects</strong>
+                    <small>Manage your subjects</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="task.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </span>
+                <span>
+                    <strong>Tasks</strong>
+                    <small>Track your tasks</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="focus.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </span>
+                <span>
+                    <strong>Focus</strong>
+                    <small>Start a focus session</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="analytics.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <span>
+                    <strong>Analytics</strong>
+                    <small>View your progress</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="achievements.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-trophy"></i>
+                </span>
+                <span>
+                    <strong>Achievements</strong>
+                    <small>See your milestones</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="ai-assistant.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </span>
+                <span>
+                    <strong>AI Assistant</strong>
+                    <small>Get study assistance</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="profile.html" class="logo-menu-link">
+                <span class="logo-menu-icon">
+                    <i class="fa-solid fa-user"></i>
+                </span>
+                <span>
+                    <strong>Profile</strong>
+                    <small>Manage your account</small>
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard">
+        <div class="dashboard-container">
+
+            <section class="dashboard-intro">
+                <div class="intro-copy">
+                    <p class="greeting-label" id="greeting">Good Morning</p>
+
+                    <h1>
+                        Welcome back,
+                        <span id="student-name">Student</span>
+                    </h1>
+
+                    <p class="greeting-subtitle">
+                        Here's a look at your study day.
+                    </p>
+                </div>
+
+                <a href="focus.html" class="intro-action">
+                    <span>Start a focus session</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </section>
+
+            <section class="today-section">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">Today</span>
+                        <h2>Your study overview</h2>
+                    </div>
+
+                    <a href="analytics.html" class="text-link">
+                        View analytics
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="overview-grid">
+
+                    <article class="overview-item">
+                        <div class="overview-label">
+                            <i class="fa-solid fa-check"></i>
+                            <span>Tasks completed</span>
+                        </div>
+                        <b id="completed-task">0</b>
+                    </article>
+
+                    <article class="overview-item">
+                        <div class="overview-label">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Study time</span>
+                        </div>
+                        <b id="study-hours">0h</b>
+                    </article>
+
+                    <article class="overview-item">
+                        <div class="overview-label">
+                            <i class="fa-solid fa-fire"></i>
+                            <span>Current streak</span>
+                        </div>
+                        <b id="study-streak">0 days</b>
+                    </article>
+
+                    <article class="overview-item">
+                        <div class="overview-label">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            <span>Overall progress</span>
+                        </div>
+                        <b id="overall-progress">0%</b>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="workspace-section">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">Workspace</span>
+                        <h2>Keep moving forward</h2>
+                    </div>
+                </div>
+
+                <div class="workspace-grid">
+
+                    <article class="workspace-card subjects-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="card-kicker">Academic</span>
+                                <h3>Subject progress</h3>
+                            </div>
+
+                            <a href="subjects.html" class="text-link">
+                                View all
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="subject-list" id="subject-progress-list">
+                            <div class="empty-state">
+                                <i class="fa-solid fa-book-open"></i>
+                                <p>No subjects added yet.</p>
+                                <a href="subjects.html">Add your first subject</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="workspace-card tasks-card">
+                        <div class="card-header">
+                            <div>
+                                <span class="card-kicker">Productivity</span>
+                                <h3>Today's tasks</h3>
+                            </div>
+
+                            <a href="task.html" class="text-link">
+                                View all
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <div class="task-list" id="today-task-list">
+                            <div class="empty-state">
+                                <i class="fa-solid fa-clipboard-list"></i>
+                                <p>No tasks for today.</p>
+                                <a href="task.html">Create a task</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="upcoming-section">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker">Coming up</span>
+                        <h2>Upcoming work</h2>
+                    </div>
+
+                    <a href="task.html" class="text-link">
+                        Manage tasks
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="upcoming-card">
+                    <div class="upcoming-list" id="upcoming-list">
+                        <div class="empty-state">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>No upcoming deadlines.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>StudyOS</span>
+                </a>
+
+                <p>Organize. Focus. Progress.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="subjects.html">Subjects</a>
+                <a href="task.html">Tasks</a>
+                <a href="focus.html">Focus</a>
+                <a href="analytics.html">Analytics</a>
+                <a href="profile.html">Profile</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 StudyOS. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+
+</body>
+</html>
